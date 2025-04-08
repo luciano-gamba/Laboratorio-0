@@ -1,18 +1,26 @@
 #ifndef ESTUDIANTE_H
 #define ESTUDIANTE_H
 #include <string>
+#include <set>
+#include "DTFecha.h"
+#include "DTInfoEstudiante.h"
 
 class Estudiante {
 public:
     Estudiante();
-    Estudiante(std::string nom, int ced, std::string ema);
+    Estudiante(std::string, int, std::string);
     ~Estudiante();
     
-    void setNombre();
-    void setCi();
-    void setEmail();
-  
+    void setNombre(std::string);
+    void setCi(int);
+    void setEmail(std::string);
+    
+    std::string getNombre();
+    int getCi();
+    std::string getEmail();
+    
     std::string toString();
+    std::set<std::string> listarInfo(DTFecha);
 private:
     std::string nombre;
     int ci;
