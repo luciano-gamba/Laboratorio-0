@@ -1,8 +1,5 @@
 #include "Estudiante.h"
-#include <cstdlib>
-#include <iostream>
-#include <string>
-using namespace std;
+
 
 Estudiante::Estudiante() {
     nombre = "Sin nombre";
@@ -19,25 +16,31 @@ Estudiante::Estudiante(std::string nom, int ced, std::string ema){
 Estudiante::~Estudiante() {
 }
 
-void Estudiante::setNombre(){
-    cout << "Ingrese nombre: ";
-    cin >> nombre;
+void Estudiante::setNombre(std::string a){
+    nombre=a;
 }
-void Estudiante::setCi(){
-    cout << "Ingrese C.I.: ";
-    cin >> ci;
+void Estudiante::setCi(int b){
+    ci=b;
 }
-void Estudiante::setEmail(){
-    cout << "Ingrese e-mail: ";
-    cin >> email;
+void Estudiante::setEmail(std::string c){
+    email=c;
 }
 
-//void Estudiante::setInformacion(informacion* I){
-//  ACA IRIAN MAS COSAS
-//}
+ std::string Estudiante::getNombre(){
+     return nombre;
+ }
+ int Estudiante::getCi(){
+     return ci;
+ }
+ std::string Estudiante::getEmail(){
+     return email;
+ }
 
 std::string Estudiante::toString(){
    return("\nNombre : "+this->nombre+"\nCédula : "+std::to_string(this->ci)+"\nE-mail : "+this->email+'\n');
 }
 
-//faltaria listarinfo();            primero hay que hacer los punteros a info, tambien falta info
+std::set<std::string> Estudiante::listarInfo(DTFecha desde){
+    std::set<std::string> resultado;
+    return resultado;
+}
