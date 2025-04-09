@@ -2,16 +2,17 @@
 #define INFORMACION_H
 #include <string>
 #include "DTFecha.h"
+using namespace std;
 
 class Informacion {
     public:
+        Informacion();
         Informacion(int id, int dia, int mes, int anio);
         virtual ~Informacion();
-        virtual std::string toString() const = 0;
+        virtual string toString() = 0;
     protected:
         int identificador;
         DTFecha Fecha;
 };
 
 #endif /* INFORMACION_H */
-

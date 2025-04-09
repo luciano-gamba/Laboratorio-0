@@ -1,19 +1,18 @@
 #ifndef PAGINAWEB_H
 #define PAGINAWEB_H
 #include <string>
-#include "DTFecha.h"
 #include "Informacion.h"
+using namespace std;
 
 class PaginaWeb: public Informacion {
-public: 
+public:
     PaginaWeb();
-    PaginaWeb(int id, DTFecha fecha, std::string t, std::string l, std::string text);
+    PaginaWeb(int id, DTFecha fecha, string t, string l, string text);
     ~PaginaWeb();
     
-    std::string toString();
+    string toString();
 private:
-    std::string titulo, link, text;
+    string titulo, link, text;
 };
 
 #endif /* PAGINAWEB_H */
-

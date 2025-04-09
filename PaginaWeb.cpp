@@ -1,6 +1,5 @@
 #include "PaginaWeb.h"
-#include "DTFecha.h"
-#include "DTFecha.cpp"
+
 
 PaginaWeb::PaginaWeb() {
 }
@@ -16,6 +15,6 @@ PaginaWeb::PaginaWeb(int id, DTFecha fecha, std::string t, std::string l, std::s
 PaginaWeb::~PaginaWeb() {
 }
 
-std::string PaginaWeb::toString(){
-    return(std::to_string(this->identificador) + ", " + std::to_string(this->Fecha) + ", " + titulo + ", " + link + ", " + text);
-   }
+string PaginaWeb::toString(){
+    return(to_string(this->identificador) + ", " + to_string(this->Fecha.getDia()) + ", " + to_string(this->Fecha.getMes()) + ", " + to_string(this->Fecha.getAnio()) + ", " + titulo + ", " + link + ", " + text);
+}

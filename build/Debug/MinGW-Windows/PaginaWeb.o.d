@@ -1,6 +1,5 @@
 build/Debug/MinGW-Windows/PaginaWeb.o: PaginaWeb.cpp PaginaWeb.h \
- DTFecha.h Informacion.h DTFecha.cpp
+ Informacion.h DTFecha.h
 PaginaWeb.h:
-DTFecha.h:
 Informacion.h:
-DTFecha.cpp:
+DTFecha.h:

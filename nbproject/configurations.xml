@@ -34,7 +34,7 @@
                    projectFiles="false"
                    kind="IMPORTANT_FILES_FOLDER">
     </logicalFolder>
-    <itemPath>Makefile.txt</itemPath>
+    <itemPath>Makefile</itemPath>
   </logicalFolder>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -62,7 +62,7 @@
       </item>
       <item path="Informacion.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="Makefile.txt" ex="false" tool="3" flavor2="0">
+      <item path="Makefile" ex="false" tool="3" flavor2="0">
       </item>
       <item path="PaginaWeb.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -107,7 +107,7 @@
       </item>
       <item path="Informacion.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="Makefile.txt" ex="false" tool="3" flavor2="0">
+      <item path="Makefile" ex="false" tool="3" flavor2="0">
       </item>
       <item path="PaginaWeb.cpp" ex="false" tool="1" flavor2="0">
       </item>
