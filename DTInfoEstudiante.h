@@ -1,23 +1,23 @@
 #ifndef DTINFOESTUDIANTE_H
 #define DTINFOESTUDIANTE_H
 #include <string>
-
+using namespace std;
 
 class DTInfoEstudiante {
 public:
     DTInfoEstudiante();
-    DTInfoEstudiante(int,std::string,int);
+    DTInfoEstudiante(int,string,int);
     ~DTInfoEstudiante();
     
-    void setInfo(int,std::string,int);
+    void setInfo(int,string,int);
     
     int getCi();
-    std::string getNombreEst();
+    string getNombreEst();
     int getidentificadorInfo();
     
 private:
     int ci;
-    std::string NombreEst;
+    string NombreEst;
     int identificadorInfo; 
 
 };

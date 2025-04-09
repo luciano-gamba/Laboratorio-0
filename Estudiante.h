@@ -4,27 +4,29 @@
 #include <set>
 #include "DTFecha.h"
 #include "DTInfoEstudiante.h"
+#include "Informacion.h"
+using namespace std;
 
 class Estudiante {
 public:
     Estudiante();
-    Estudiante(std::string, int, std::string);
+    Estudiante(string, int, string);
     ~Estudiante();
     
-    void setNombre(std::string);
+    void setNombre(string);
     void setCi(int);
-    void setEmail(std::string);
+    void setEmail(string);
     
-    std::string getNombre();
+    string getNombre();
     int getCi();
-    std::string getEmail();
+    string getEmail();
     
-    std::string toString();
-    std::set<std::string> listarInfo(DTFecha);
+    string toString();
+    set<string> listarInfo(DTFecha);
 private:
-    std::string nombre;
+    string nombre;
     int ci;
-    std::string email;
+    string email;
 
 };
 

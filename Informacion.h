@@ -4,6 +4,8 @@
 #include "DTFecha.h"
 using namespace std;
 
+class Estudiante;
+
 class Informacion {
     public:
         Informacion();
