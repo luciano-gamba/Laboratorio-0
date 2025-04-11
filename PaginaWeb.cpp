@@ -16,5 +16,5 @@ PaginaWeb::~PaginaWeb() {
 }
 
 string PaginaWeb::toString(){
-    return(to_string(this->identificador) + ", " + to_string(this->Fecha.getDia()) + ", " + to_string(this->Fecha.getMes()) + ", " + to_string(this->Fecha.getAnio()) + ", " + titulo + ", " + link + ", " + text);
+    return(to_string(this->identificador) + ", " + to_string(this->Fecha.getDia()) + "/" + to_string(this->Fecha.getMes()) + "/" + to_string(this->Fecha.getAnio()) + ", " + titulo + ", " + link + ", " + text);
 }

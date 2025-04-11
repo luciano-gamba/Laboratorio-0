@@ -35,8 +35,13 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/ChatGPT.o \
+	${OBJECTDIR}/DTFecha.o \
+	${OBJECTDIR}/DTInfoEstudiante.o \
 	${OBJECTDIR}/Estudiante.o \
 	${OBJECTDIR}/Informacion.o \
+	${OBJECTDIR}/Libro.o \
+	${OBJECTDIR}/PaginaWeb.o \
 	${OBJECTDIR}/main.o
 
 
@@ -64,6 +69,21 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/laboratorio_0.1: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/laboratorio_0.1 ${OBJECTFILES} ${LDLIBSOPTIONS}
 
+${OBJECTDIR}/ChatGPT.o: ChatGPT.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/ChatGPT.o ChatGPT.cpp
+
+${OBJECTDIR}/DTFecha.o: DTFecha.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/DTFecha.o DTFecha.cpp
+
+${OBJECTDIR}/DTInfoEstudiante.o: DTInfoEstudiante.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/DTInfoEstudiante.o DTInfoEstudiante.cpp
+
 ${OBJECTDIR}/Estudiante.o: Estudiante.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
@@ -73,6 +93,16 @@ ${OBJECTDIR}/Informacion.o: Informacion.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Informacion.o Informacion.cpp
+
+${OBJECTDIR}/Libro.o: Libro.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Libro.o Libro.cpp
+
+${OBJECTDIR}/PaginaWeb.o: PaginaWeb.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/PaginaWeb.o PaginaWeb.cpp
 
 ${OBJECTDIR}/main.o: main.cpp
 	${MKDIR} -p ${OBJECTDIR}
