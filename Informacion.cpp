@@ -10,3 +10,11 @@ Informacion::Informacion(int id, int dia, int mes, int anio){
 
 Informacion::~Informacion(){
 }
+
+void Informacion::guardarEstudiante(Estudiante* quiereGuardar){
+    this->GuardadaPor.insert(quiereGuardar);
+}
+
+DTFecha Informacion::getFecha(){
+    return this->Fecha;
+}

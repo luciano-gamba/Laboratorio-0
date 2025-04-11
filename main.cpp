@@ -50,13 +50,50 @@ int main(int argc, char** argv) {
     
     Libro* uno = new Libro(5, *fecha, "Applying UML and Patterns: An Introduction to Object-Oriented Analysis and Design and Iterative Development", Autores1, "Applying UML and Patterns is the world’s #1 business and college introduction to “thinking in objects”―and using that insight in real-world objectoriented analysis and design. Building on two widely acclaimed previous editions, Craig Larman has updated this book to fully reflect the new UML 2 standard, to help you master the art of object design, and to promote high-impact, iterative, and skillful agile modeling practices");
     
-    cout << uno->toString();
+    cout << uno->toString()<<endl<<endl;
     
     //ESTUDIANTES
     
     Estudiante* persona1 = new Estudiante("Alex García", 52365899, "ag5678@gmail.com");
     
     Estudiante* persona2 = new Estudiante("Betina Gonzalez", 49891239, "beg999@gmail.com");
+    
+    //ESTABLEZCO LOS LINKS
+/*    
+    Estudiante = Alex García Información = 1
+    Estudiante = Alex García Información = 2
+    Estudiante = Alex García Información = 3
+    Estudiante = Betina Gonzalez Información = 3
+    Estudiante = Betina Gonzalez Información = 4
+    Estudiante = Betina Gonzalez Información = 5
+*/
+    persona1->guardarInfo(Blog);
+    persona1->guardarInfo(Blog2);
+    persona1->guardarInfo(duda1);
+    persona2->guardarInfo(duda1);
+    persona2->guardarInfo(duda2);
+    persona2->guardarInfo(uno);
+    
+    Blog->guardarEstudiante(persona1);
+    Blog2->guardarEstudiante(persona1);
+    duda1->guardarEstudiante(persona1);
+    duda1->guardarEstudiante(persona2);
+    duda2->guardarEstudiante(persona2);
+    uno->guardarEstudiante(persona2);
+    
+    
+    /*
+    DTFecha* fecha15 = new DTFecha();
+    fecha15->setfecha(8,3,2024);
+      Pruebas listarInfo
+    cout<<convertirResultadoLista(persona1->listarInfo(*fecha15))
+    cout<<convertirResultadoLista(persona2->listarInfo(*fecha15));
+
+     */
+    
+    
+    
+    
     
     return 0;
 }

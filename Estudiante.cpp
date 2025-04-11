@@ -7,7 +7,7 @@ Estudiante::Estudiante() {
     email = "Sin email";
 }
 
-Estudiante::Estudiante(std::string nom, int ced, std::string ema){
+Estudiante::Estudiante(string nom, int ced, string ema){
     this->nombre = nom;
     this->ci = ced;
     this->email = ema;
@@ -16,31 +16,51 @@ Estudiante::Estudiante(std::string nom, int ced, std::string ema){
 Estudiante::~Estudiante() {
 }
 
-void Estudiante::setNombre(std::string a){
+void Estudiante::setNombre(string a){
     nombre=a;
 }
 void Estudiante::setCi(int b){
     ci=b;
 }
-void Estudiante::setEmail(std::string c){
+void Estudiante::setEmail(string c){
     email=c;
 }
 
- std::string Estudiante::getNombre(){
+void Estudiante::guardarInfo(Informacion* infoAguardar){
+    this->infoGuardada.insert(infoAguardar);
+}
+
+
+string Estudiante::getNombre(){
      return nombre;
  }
  int Estudiante::getCi(){
      return ci;
  }
- std::string Estudiante::getEmail(){
+string Estudiante::getEmail(){
      return email;
  }
 
-std::string Estudiante::toString(){
-   return("\nNombre : "+this->nombre+"\nCédula : "+std::to_string(this->ci)+"\nE-mail : "+this->email+'\n');
+string Estudiante::toString(){
+   return("\nNombre : "+this->nombre+"\nCédula : "+to_string(this->ci)+"\nE-mail : "+this->email+'\n');
 }
 
-std::set<std::string> Estudiante::listarInfo(DTFecha desde){
-    std::set<std::string> resultado;
+set<string> Estudiante::listarInfo(DTFecha desde){
+    set<string> resultado;
+    
+    for (set<Informacion*>::iterator it = this->infoGuardada.begin(); it != this->infoGuardada.end(); ++it) {
+       if(!desde.mayorIgual((*it)->getFecha())) {
+           resultado.insert((*it)->toString());
+       }       
+    }
     return resultado;
+}
+
+string convertirResultadoLista(set<string> Lista){
+    string resultadoLista;
+    for (set<string>::iterator it = Lista.begin(); it != Lista.end(); ++it) {
+        resultadoLista = resultadoLista + ", " + *it + "\n\n";
+    }
+    return resultadoLista;
+    
 }

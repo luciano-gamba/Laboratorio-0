@@ -17,6 +17,8 @@ public:
     void setCi(int);
     void setEmail(string);
     
+    void guardarInfo(Informacion* infoAguardar);
+    
     string getNombre();
     int getCi();
     string getEmail();
@@ -27,8 +29,10 @@ private:
     string nombre;
     int ci;
     string email;
-
+    set<Informacion*> infoGuardada; //Pseudoatributo
 };
+
+string convertirResultadoLista(set<string> Lista);
 
 #endif /* ESTUDIANTE_H */
 
