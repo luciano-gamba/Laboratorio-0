@@ -27,3 +27,10 @@ std::string DTInfoEstudiante::getNombreEst(){
 int DTInfoEstudiante::getidentificadorInfo(){
     return identificadorInfo;
 }
+
+
+ostream& operator<<(ostream& os, DTInfoEstudiante DTInf)
+{
+    os << DTInf.getCi() << ", " << DTInf.getNombreEst() << ", " << DTInf.getidentificadorInfo();
+    return os;
+}

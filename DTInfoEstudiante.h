@@ -1,6 +1,7 @@
 #ifndef DTINFOESTUDIANTE_H
 #define DTINFOESTUDIANTE_H
 #include <string>
+#include <iostream>
 using namespace std;
 
 class DTInfoEstudiante {
@@ -21,6 +22,8 @@ private:
     int identificadorInfo; 
 
 };
+
+ostream& operator<<(ostream& os, DTInfoEstudiante DTInf);
 
 #endif /* DTINFOESTUDIANTE_H */
 
