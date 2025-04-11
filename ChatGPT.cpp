@@ -14,5 +14,5 @@ ChatGPT::~ChatGPT() {
 }
 
 string ChatGPT::toString(){
-    return(to_string(this->identificador) + ", " + to_string(this->Fecha.getDia()) + ", " + to_string(this->Fecha.getMes()) + ", " + to_string(this->Fecha.getAnio()) + ", " + pregunta + ", " + respuesta);
+    return(to_string(this->identificador) + ", " + to_string(this->Fecha.getDia()) + "/" + to_string(this->Fecha.getMes()) + "/" + to_string(this->Fecha.getAnio()) + ", " + pregunta + ", " + respuesta);
 }
