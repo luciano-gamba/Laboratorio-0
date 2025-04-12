@@ -7,6 +7,7 @@
 #include "DTFecha.h"
 #include "PaginaWeb.h"
 #include "ChatGPT.h"
+#include "DTInfoEstudiante.h"
 using namespace std;
 
 int main(int argc, char** argv) {
@@ -99,30 +100,25 @@ int main(int argc, char** argv) {
     listaInformacionGeneral.insert(duda2);
     listaInformacionGeneral.insert(uno);
     
-    set<Informacion*> resultado;
-    
-    for (set<Informacion*>::iterator it = listaInformacionGeneral.begin(); it !=listaInformacionGeneral.end(); ++it) {
-       if ((*it)->toString().find("polimorfismo")){
-           resultado.insert(*it);
-       }       
-    }
-    
-    for (set<Informacion*>::iterator it = resultado.begin(); it !=resultado.end(); ++it) {
-        DTInfoEstudiante aux();
-        
-        for(set<Estudiante*>::iterator ite = aux->)
-        
-        
-        
-        aux->setInfo((*it)->getIDinfo(),,);     
-       
-    
-    
-    
-    }
-    
+set<Informacion*> resultado;
 
+for (set<Informacion*>::iterator it = listaInformacionGeneral.begin(); it != listaInformacionGeneral.end(); ++it) {
+    if ((*it)->toString().find("polimorfismo") >=0) {
+        resultado.insert(*it);
+    }
+}
+
+set<DTInfoEstudiante> listaDTinfo;
+
+for (set<Informacion*>::iterator it = resultado.begin(); it != resultado.end(); ++it) {
+    DTInfoEstudiante aux;
+//por acá hay que acceder al estudiante
     
+    aux.setInfo(0,"NombreDelEst",(*it)->getIDinfo());
+//Acá iría ci---^ 
+    
+}
+
     return 0;
 }
 

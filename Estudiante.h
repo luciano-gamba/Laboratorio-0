@@ -3,7 +3,6 @@
 #include <string>
 #include <set>
 #include "DTFecha.h"
-#include "DTInfoEstudiante.h"
 #include "Informacion.h"
 using namespace std;
 

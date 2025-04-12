@@ -5,7 +5,7 @@ DTInfoEstudiante::DTInfoEstudiante() {
     NombreEst="Sin nombre";
     identificadorInfo=0;
 }
-DTInfoEstudiante::DTInfoEstudiante(int a,std::string b,int c){
+DTInfoEstudiante::DTInfoEstudiante(int a,string b,int c){
     ci=a;
     NombreEst=b;
     identificadorInfo=c;
@@ -13,7 +13,7 @@ DTInfoEstudiante::DTInfoEstudiante(int a,std::string b,int c){
 DTInfoEstudiante::~DTInfoEstudiante(){
     
 }
-void DTInfoEstudiante::setInfo(int a,std::string b,int c){
+void DTInfoEstudiante::setInfo(int a,string b,int c){
     ci=a;
     NombreEst=b;
     identificadorInfo=c;
@@ -29,8 +29,7 @@ int DTInfoEstudiante::getidentificadorInfo(){
 }
 
 
-ostream& operator<<(ostream& os, DTInfoEstudiante DTInf)
-{
+ostream& operator<<(ostream& os, DTInfoEstudiante DTInf){
     os << DTInf.getCi() << ", " << DTInf.getNombreEst() << ", " << DTInf.getidentificadorInfo();
     return os;
 }
