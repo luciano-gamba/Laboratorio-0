@@ -14,6 +14,7 @@ class Informacion {
         virtual ~Informacion();
         virtual string toString() = 0;
         DTFecha getFecha();
+        int getIDinfo();
         void guardarEstudiante(Estudiante* quiereGuardar);
     protected:
         int identificador;

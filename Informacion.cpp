@@ -18,3 +18,7 @@ void Informacion::guardarEstudiante(Estudiante* quiereGuardar){
 DTFecha Informacion::getFecha(){
     return this->Fecha;
 }
+
+int Informacion::getIDinfo(){
+    return this->identificador;
+}

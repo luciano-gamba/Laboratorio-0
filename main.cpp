@@ -82,18 +82,46 @@ int main(int argc, char** argv) {
     uno->guardarEstudiante(persona2);
     
     
-    /*
+    
     DTFecha* fecha15 = new DTFecha();
     fecha15->setfecha(8,3,2024);
-      Pruebas listarInfo
-    cout<<convertirResultadoLista(persona1->listarInfo(*fecha15))
+      //Pruebas listarInfo
+    cout<<convertirResultadoLista(persona1->listarInfo(*fecha15));
     cout<<convertirResultadoLista(persona2->listarInfo(*fecha15));
 
-     */
+    set<DTInfoEstudiante> buscarInformacion;
+    
+    set<Informacion*> listaInformacionGeneral;
+    
+    listaInformacionGeneral.insert(Blog);
+    listaInformacionGeneral.insert(Blog2);
+    listaInformacionGeneral.insert(duda1);
+    listaInformacionGeneral.insert(duda2);
+    listaInformacionGeneral.insert(uno);
+    
+    set<Informacion*> resultado;
+    
+    for (set<Informacion*>::iterator it = listaInformacionGeneral.begin(); it !=listaInformacionGeneral.end(); ++it) {
+       if ((*it)->toString().find("polimorfismo")){
+           resultado.insert(*it);
+       }       
+    }
+    
+    for (set<Informacion*>::iterator it = resultado.begin(); it !=resultado.end(); ++it) {
+        DTInfoEstudiante aux();
+        
+        for(set<Estudiante*>::iterator ite = aux->)
+        
+        
+        
+        aux->setInfo((*it)->getIDinfo(),,);     
+       
     
     
     
+    }
     
+
     
     return 0;
 }
