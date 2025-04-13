@@ -1,4 +1,5 @@
 #include "Estudiante.h"
+#include "Informacion.h"
 
 
 Estudiante::Estudiante() {
@@ -63,4 +64,8 @@ string convertirResultadoLista(set<string> Lista){
     }
     return resultadoLista;
     
+}
+
+void Estudiante::borrarInfo(Informacion* info){
+    this->infoGuardada.erase(info);
 }

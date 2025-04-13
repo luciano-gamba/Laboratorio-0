@@ -16,6 +16,8 @@ class Informacion {
         DTFecha getFecha();
         int getIDinfo();
         void guardarEstudiante(Estudiante* quiereGuardar);
+        set<Estudiante*> apunta();
+        void borrarEstudiante();
     protected:
         int identificador;
         DTFecha Fecha;

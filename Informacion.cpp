@@ -1,4 +1,5 @@
 #include "Informacion.h"
+#include "Estudiante.h"
 
 Informacion::Informacion(){
 }
@@ -21,4 +22,15 @@ DTFecha Informacion::getFecha(){
 
 int Informacion::getIDinfo(){
     return this->identificador;
+}
+
+set<Estudiante*> Informacion::apunta(){   
+    return this->GuardadaPor;
+}
+
+void Informacion::borrarEstudiante(){
+    for(Estudiante* est : this->GuardadaPor){
+        est->borrarInfo(this);
+    }
+    this->GuardadaPor.clear();
 }

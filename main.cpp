@@ -89,8 +89,8 @@ int main(int argc, char** argv) {
       //Pruebas listarInfo
     cout<<convertirResultadoLista(persona1->listarInfo(*fecha15));
     cout<<convertirResultadoLista(persona2->listarInfo(*fecha15));
-
-    set<DTInfoEstudiante> buscarInformacion;
+    
+// ARRANCA EL H    
     
     set<Informacion*> listaInformacionGeneral;
     
@@ -100,23 +100,59 @@ int main(int argc, char** argv) {
     listaInformacionGeneral.insert(duda2);
     listaInformacionGeneral.insert(uno);
     
+//HABRIA QUE LLENAR LA LISTA CON UNA FUNCION?
+    
 set<Informacion*> resultado;
+DTInfoEstudiante aux;
 
 for (set<Informacion*>::iterator it = listaInformacionGeneral.begin(); it != listaInformacionGeneral.end(); ++it) {
-    if ((*it)->toString().find("polimorfismo") >=0) {
+    if ((*it)->toString().find("polimorfismo") != string::npos) {
         resultado.insert(*it);
     }
 }
 
-set<DTInfoEstudiante> listaDTinfo;
+for (set<Informacion*>::iterator it = resultado.begin(); it != resultado.end(); ++it) {
+    
+    set<Estudiante*> Est;
+    Est = (*it)->apunta(); //hay que cambiarle el nombre!!!!!!!!!!!!!!! es un get puntero de estudiantes
+    
+    for (set<Estudiante*>::iterator ite = Est.begin(); ite != Est.end(); ++ite){
+        aux.setInfo((*ite)->getCi(),(*ite)->getNombre() ,(*it)->getIDinfo());
+        cout<<aux << endl;
+    }
+}
+
+//TERMINA EL H
+
+//for(set<Informacion*>::iterator it = listaInformacionGeneral.begin(); it != listaInformacionGeneral.end(); ++it) {
+//    if ((*it)->getIDinfo()==0){
+//        (*it)->~Informacion();
+ //       (*it)->borrarEstudiante();
+//        delete (*it);
+//    }
+// }   
+
+listaInformacionGeneral.erase(duda1);
+resultado.erase(duda1);
+delete duda1;
+//FALTAN COSAS A BORRAR!!!!!!!!!!!!!!!!!!!
+//ACA ANDA LA I
+
+for (set<Informacion*>::iterator it = listaInformacionGeneral.begin(); it != listaInformacionGeneral.end(); ++it) {
+    if ((*it)->toString().find("polimorfismo") != string::npos) {
+        resultado.insert(*it);
+    }
+}
 
 for (set<Informacion*>::iterator it = resultado.begin(); it != resultado.end(); ++it) {
-    DTInfoEstudiante aux;
-//por acá hay que acceder al estudiante
     
-    aux.setInfo(0,"NombreDelEst",(*it)->getIDinfo());
-//Acá iría ci---^ 
+    set<Estudiante*> Est;
+    Est = (*it)->apunta(); //hay que cambiarle el nombre!!!!!!!!!!!!!!! es un get puntero de estudiantes
     
+    for (set<Estudiante*>::iterator ite = Est.begin(); ite != Est.end(); ++ite){
+        aux.setInfo((*ite)->getCi(),(*ite)->getNombre() ,(*it)->getIDinfo());
+        cout<<aux << endl;
+    }
 }
 
     return 0;

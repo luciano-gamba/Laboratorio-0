@@ -24,6 +24,8 @@ public:
     
     string toString();
     set<string> listarInfo(DTFecha);
+    
+    void borrarInfo(Informacion* info);
 private:
     string nombre;
     int ci;
