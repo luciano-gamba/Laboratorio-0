@@ -6,6 +6,12 @@ DTFecha::DTFecha() {
     anio=0;
 }
 
+DTFecha::DTFecha(int d, int m, int a){
+    dia=d;
+    mes=m;
+    anio=a;
+}
+
 void DTFecha::setfecha(int d, int m, int a){
     dia=d;
     mes=m;

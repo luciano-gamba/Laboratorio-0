@@ -1,5 +1,6 @@
 #ifndef INFORMACION_H
 #define INFORMACION_H
+#include <iostream>
 #include <string>
 #include "DTFecha.h"
 #include <set>
@@ -16,7 +17,7 @@ class Informacion {
         DTFecha getFecha();
         int getIDinfo();
         void guardarEstudiante(Estudiante* quiereGuardar);
-        set<Estudiante*> apunta();
+        set<Estudiante*> getEstudiantes();
         void borrarEstudiante();
     protected:
         int identificador;

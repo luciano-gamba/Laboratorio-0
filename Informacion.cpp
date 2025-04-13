@@ -10,6 +10,7 @@ Informacion::Informacion(int id, int dia, int mes, int anio){
 }
 
 Informacion::~Informacion(){
+    cout<<"Este es el id a borrar: " << this->identificador << endl;
 }
 
 void Informacion::guardarEstudiante(Estudiante* quiereGuardar){
@@ -24,13 +25,16 @@ int Informacion::getIDinfo(){
     return this->identificador;
 }
 
-set<Estudiante*> Informacion::apunta(){   
+set<Estudiante*> Informacion::getEstudiantes(){   
     return this->GuardadaPor;
 }
 
 void Informacion::borrarEstudiante(){
-    for(Estudiante* est : this->GuardadaPor){
-        est->borrarInfo(this);
+ set<Estudiante*> copia = GuardadaPor;
+
+    for (set<Estudiante*>::iterator it = copia.begin(); it != copia.end(); ++it) {
+        (*it)->borrarInfo(this);
     }
-    this->GuardadaPor.clear();
+
+    copia.clear();
 }

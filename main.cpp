@@ -14,11 +14,9 @@ int main(int argc, char** argv) {
     
     //PAGINA WEB
     
-    DTFecha* fecha1 = new DTFecha();
-    fecha1->setfecha(7,3,2024);
+    DTFecha* fecha1 = new DTFecha(7,3,2024);
     
-    DTFecha* fecha2 = new DTFecha();
-    fecha2->setfecha(5,3,2024);
+    DTFecha* fecha2 = new DTFecha(5,3,2024);
     
     PaginaWeb* Blog = new PaginaWeb(1, *fecha1, "Programación 4 Guía Semana 1 (4/3)", "https://eva.fing.edu.uy/pluginfile.php/468051/mod_resource/content/4/Guia01_P42024_IntroCBasicos.pdf", "El objetivo de esta semana es contextualizar el paradigma de Orientación a Objetos (OO) en el marco de la Ingeniería de Software, así como comenzar a ver sus conceptos básicos y cómo éstos se implementan en C++.");
     
@@ -29,11 +27,9 @@ int main(int argc, char** argv) {
     
     //CHATGPT
     
-    DTFecha* fecha3 = new DTFecha();
-    fecha3->setfecha(8,3,2024);
+    DTFecha* fecha3 = new DTFecha(8,3,2024);
     
-    DTFecha* fecha4 = new DTFecha();
-    fecha4->setfecha(5,3,2024);
+    DTFecha* fecha4 = new DTFecha(5,3,2024);
     
     ChatGPT* duda1 = new ChatGPT(3, *fecha3, "¿Qué es el polimorfismo en orientación a objetos?", "El polimorfismo en programación orientada a objetos se refiere a la capacidad de un objeto de tomar múltiples formas. Puede ser estático, resuelto en tiempo de compilación, basado en la herencia, o dinámico, resuelto en tiempo de ejecución, asociado a interfaces o métodos abstractos. En esencia, permite que objetos de diferentes clases respondan a la misma interfaz de manera coherente, facilitando la flexibilidad y extensibilidad del código.");
     
@@ -46,8 +42,7 @@ int main(int argc, char** argv) {
     
     set<string>Autores1;
     Autores1.insert("Craig Larman");
-    DTFecha* fecha = new DTFecha();
-    fecha->setfecha(15,3,2024);
+    DTFecha* fecha = new DTFecha(15,3,2024);
     
     Libro* uno = new Libro(5, *fecha, "Applying UML and Patterns: An Introduction to Object-Oriented Analysis and Design and Iterative Development", Autores1, "Applying UML and Patterns is the world’s #1 business and college introduction to “thinking in objects”―and using that insight in real-world objectoriented analysis and design. Building on two widely acclaimed previous editions, Craig Larman has updated this book to fully reflect the new UML 2 standard, to help you master the art of object design, and to promote high-impact, iterative, and skillful agile modeling practices");
     
@@ -60,14 +55,7 @@ int main(int argc, char** argv) {
     Estudiante* persona2 = new Estudiante("Betina Gonzalez", 49891239, "beg999@gmail.com");
     
     //ESTABLEZCO LOS LINKS
-/*    
-    Estudiante = Alex García Información = 1
-    Estudiante = Alex García Información = 2
-    Estudiante = Alex García Información = 3
-    Estudiante = Betina Gonzalez Información = 3
-    Estudiante = Betina Gonzalez Información = 4
-    Estudiante = Betina Gonzalez Información = 5
-*/
+
     persona1->guardarInfo(Blog);
     persona1->guardarInfo(Blog2);
     persona1->guardarInfo(duda1);
@@ -82,11 +70,12 @@ int main(int argc, char** argv) {
     duda2->guardarEstudiante(persona2);
     uno->guardarEstudiante(persona2);
     
+// ARRANCA EL G    
     
+    DTFecha* fecha15 = new DTFecha(8,3,2024);
+     
+    //Pruebas listarInfo
     
-    DTFecha* fecha15 = new DTFecha();
-    fecha15->setfecha(8,3,2024);
-      //Pruebas listarInfo
     cout<<convertirResultadoLista(persona1->listarInfo(*fecha15));
     cout<<convertirResultadoLista(persona2->listarInfo(*fecha15));
     
@@ -100,7 +89,6 @@ int main(int argc, char** argv) {
     listaInformacionGeneral.insert(duda2);
     listaInformacionGeneral.insert(uno);
     
-//HABRIA QUE LLENAR LA LISTA CON UNA FUNCION?
     
 set<Informacion*> resultado;
 DTInfoEstudiante aux;
@@ -114,7 +102,7 @@ for (set<Informacion*>::iterator it = listaInformacionGeneral.begin(); it != lis
 for (set<Informacion*>::iterator it = resultado.begin(); it != resultado.end(); ++it) {
     
     set<Estudiante*> Est;
-    Est = (*it)->apunta(); //hay que cambiarle el nombre!!!!!!!!!!!!!!! es un get puntero de estudiantes
+    Est = (*it)->getEstudiantes();
     
     for (set<Estudiante*>::iterator ite = Est.begin(); ite != Est.end(); ++ite){
         aux.setInfo((*ite)->getCi(),(*ite)->getNombre() ,(*it)->getIDinfo());
@@ -123,31 +111,25 @@ for (set<Informacion*>::iterator it = resultado.begin(); it != resultado.end(); 
 }
 
 //TERMINA EL H
+  
+//INICIA LA I
 
-//for(set<Informacion*>::iterator it = listaInformacionGeneral.begin(); it != listaInformacionGeneral.end(); ++it) {
-//    if ((*it)->getIDinfo()==0){
-//        (*it)->~Informacion();
- //       (*it)->borrarEstudiante();
-//        delete (*it);
-//    }
-// }   
-
+duda1->~Informacion();
+duda1->borrarEstudiante();
 listaInformacionGeneral.erase(duda1);
-resultado.erase(duda1);
-delete duda1;
-//FALTAN COSAS A BORRAR!!!!!!!!!!!!!!!!!!!
-//ACA ANDA LA I
+
+set<Informacion*> resultado2;
 
 for (set<Informacion*>::iterator it = listaInformacionGeneral.begin(); it != listaInformacionGeneral.end(); ++it) {
     if ((*it)->toString().find("polimorfismo") != string::npos) {
-        resultado.insert(*it);
+        resultado2.insert(*it);
     }
 }
 
-for (set<Informacion*>::iterator it = resultado.begin(); it != resultado.end(); ++it) {
+for (set<Informacion*>::iterator it = resultado2.begin(); it != resultado2.end(); ++it) {
     
     set<Estudiante*> Est;
-    Est = (*it)->apunta(); //hay que cambiarle el nombre!!!!!!!!!!!!!!! es un get puntero de estudiantes
+    Est = (*it)->getEstudiantes();
     
     for (set<Estudiante*>::iterator ite = Est.begin(); ite != Est.end(); ++ite){
         aux.setInfo((*ite)->getCi(),(*ite)->getNombre() ,(*it)->getIDinfo());
@@ -157,4 +139,3 @@ for (set<Informacion*>::iterator it = resultado.begin(); it != resultado.end(); 
 
     return 0;
 }
-
